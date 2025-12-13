@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MAHFUZone | Mahfuz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f1220;
+      --card: #171a2e;
+      --text: #eaeaf0;
+      --muted: #9aa0c4;
+      --accent: #6c7cff;
+      --accent-soft: rgba(108,124,255,0.15);
+    }
+
+    [data-theme="light"] {
+      --bg: #f4f6fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --accent: #4f46e5;
+      --accent-soft: rgba(79,70,229,0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: background .3s, color .3s;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .toggle {
+      cursor: pointer;
+      padding: 6px 12px;
+      border-radius: 20px;
+      background: var(--accent-soft);
+      font-size: 14px;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px 20px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero span { color: var(--accent); }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 520px;
+      margin-bottom: 30px;
+    }
+
+    .hero img {
+      width: 100%;
+      border-radius: 24px;
+      background: var(--card);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 10px;
+      font-weight: 500;
+    }
+
+    h2 {
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 24px;
+      border-radius: 18px;
+      transition: transform .3s, box-shadow .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    }
+
+    .card h3 { margin-bottom: 10px; }
+    .card p { color: var(--muted); font-size: 15px; }
+
+    footer {
+      padding: 40px 20px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 38px; }
+    }
+  </style>
+</head>
+<body data-theme="dark">
+
+<header>
+  <nav>
+    <div class="logo">MAHFUZone</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#blogs">Blog</a>
+      <a href="#contact">Contact</a>
+      <div class="toggle" onclick="toggleTheme()">🌙 / ☀️</div>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>Hi, I'm <span>Mahfuz</span></h1>
+    <p>
+      Welcome to MAHFUZone. This is my personal space on the internet where I share my work,
+      ideas, and blog posts about technology, learning, and growth.
+    </p>
+    <a class="btn" href="#blogs">Read My Blog</a>
+  </div>
+  <div>
+    <!-- Replace src with your own photo file -->
+    <img src="photo.jpg" alt="Mahfuz photo" />
+  </div>
+</section>
+
+<section id="about">
+  <h2>About Me</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Who I Am</h3>
+      <p>
+        I'm Mahfuz, a student and tech enthusiast who loves learning, building things,
+        and exploring the digital world.
+      </p>
+    </div>
+    <div class="card">
+      <h3>What I Do</h3>
+      <p>
+        I work with computers, explore Linux and programming, and create content to help
+        others learn from my journey.
+      </p>
+    </div>
+    <div class="card">
+      <h3>My Goal</h3>
+      <p>
+        To grow my skills, build meaningful projects, and turn MAHFUZone into a place
+        worth visiting.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="blogs">
+  <h2>Latest Blog Posts</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Getting Started with Linux</h3>
+      <p>
+        My journey into Linux, what I learned first, and how beginners can start without fear.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Learning Python as a Student</h3>
+      <p>
+        Simple tips, mistakes I made, and how I’m building consistency while studying.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Online Skills That Actually Matter</h3>
+      <p>
+        A realistic look at online skills, freelancing, and what beginners should focus on.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card">
+    <p>
+      Want to connect or collaborate? You can add your email, social links,
+      or a contact form here later.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 MAHFUZone · Built by Mahfuz</p>
+</footer>
+
+<script>
+  function toggleTheme() {
+    const body = document.body;
+    body.dataset.theme = body.dataset.theme === 'light' ? 'dark' : 'light';
+  }
+</script>
+
+</body>
+</html>
